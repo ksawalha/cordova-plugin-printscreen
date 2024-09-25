@@ -1,0 +1,25 @@
+{
+  "name": "cordova-plugin-printscreen",
+  "version": "1.0.0",
+  "description": "Cordova plugin to capture and print the current view using a Bluetooth thermal printer",
+  "main": "www/printScreen.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cordova",
+    "bluetooth",
+    "printer",
+    "escpos",
+    "thermal",
+    "screenshot"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "cordova": {
+    "id": "cordova-plugin-printscreen",
+    "platforms": [
+      "android"
+    ]
+  }
+}
