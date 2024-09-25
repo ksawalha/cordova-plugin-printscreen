@@ -1,7 +1,13 @@
 var exec = require('cordova/exec');
-var PrintScreen = {
-    printScreen: function(successCallback, errorCallback) {
-        exec(successCallback, errorCallback, "PrintScreenPlugin", "printScreen", []);
+
+var BluetoothPrinter = {
+    checkBluetooth: function (successCallback, errorCallback) {
+        exec(successCallback, errorCallback, 'BluetoothPrinter', 'checkBluetooth', []);
+    },
+    
+    captureAndPrintScreenshot: function (successCallback, errorCallback) {
+        exec(successCallback, errorCallback, 'BluetoothPrinter', 'captureAndPrintScreenshot', []);
     }
 };
-module.exports = PrintScreen;
+
+module.exports = BluetoothPrinter;
