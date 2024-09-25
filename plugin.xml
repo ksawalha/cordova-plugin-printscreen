@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cordova-plugin-printscreen"
-        version="1.0.0">
-    <name>PrintScreenPlugin</name>
-    <description>Plugin to capture the screen and print using a Bluetooth thermal printer</description>
+<plugin id="cordova-bluetooth-printer-plugin" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>BluetoothPrinter</name>
+    <description>Cordova Plugin to check Bluetooth, capture screenshot, and print using ESC/POS compatible printer.</description>
     <license>MIT</license>
-    <keywords>bluetooth, printer, escpos, thermal, screenshot</keywords>
+    <keywords>bluetooth, esc/pos, print, screenshot</keywords>
     
+    <!-- Android permissions -->
     <platform name="android">
         <config-file target="AndroidManifest.xml" parent="/*">
-            <uses-permission android:name="android.permission.BLUETOOTH"/>
-            <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-            <uses-permission android:name="android.permission.BLUETOOTH_SCAN"/>
-            <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
-            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+            <uses-permission android:name="android.permission.BLUETOOTH" />
+            <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+            <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+            <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
         </config-file>
-        <source-file src="src/android/PrintScreenPlugin.java" target-dir="src/com/example/cordovaprintscreen"/>
+
+        <source-file src="src/android/BluetoothPrinter.java" target-dir="src/com/example/bluetoothprinter" />
     </platform>
-    
-    <js-module src="www/printScreen.js" name="PrintScreen">
-        <clobbers target="PrintScreen"/>
-    </js-module>
 </plugin>
